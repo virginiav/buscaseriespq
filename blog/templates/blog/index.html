@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Busca Série</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/landing-page.min.css' %}" rel="stylesheet">
+  <!--Favicon-->
+  <link rel="icon" type="image/png"  href="{% static 'img/favicon2.png' %}">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id = "areadebusca"  class="navbar navbar-light  static-top" style="background: #000000;">
+    <div class="container">
+      <img src="{% static 'img/logo_buscaserie_branca.png' %}" style="width: 150px;">
+      <a class="navbar-brand" href="#" style="color: grey; font-size: 12px;">Como funciona a pesquisa</a>
+      <!--<a class="btn btn-primary" href="#">Sign In</a>-->
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <br><br><br>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input id="buscanome" name="palavrachave" type="text" class="form-control form-control-lg" placeholder="Digite o nome da série">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" name="botao" class="btn btn-block btn-lg btn-danger" >Buscar</button>
+<!--                <bronclick="Mudarestado('minhaDiv')"><br>-->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!--{{consult}}-->
+<!--  {{eps}}-->
+<!--  <h5>{{temporadas}} TEMPORADAS</h5>-->
+
+<!--  <p style="text-align: justify;"> {{abs}}</p>-->
+
+<!--  original-->
+<!--  <section id = "minhaDiv" class="testimonials text-center bg-light" style="background-color: white; display: none;">-->
+    <div class="container" style="align-content: center;">
+      <h2 class="mb-5" style="text-align: left;">{{consult}}</h2>
+      <p style="text-align: justify;">
+         {{abs}}
+      </p><br>
+      <p style="text-align: center">
+      <h1 align="center">{{erromsg}}</h1>
+      </p>
+
+
+<!--      <div class="row">-->
+
+<!--        <div class="col-lg-5">-->
+<!--          <div class="testimonial-item mx-auto mb-8 mb-lg-0">-->
+<!--            <img class="img-fluid rounded-circle mb-3" src="{% static 'img/gravacao.png' %}" alt="" style="width: 115px">-->
+<!--            <h5>{{eps}} EPISÓDIOS</h5>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-5">-->
+<!--          <div class="testimonial-item mx-auto mb-6 mb-lg-0">-->
+<!--            <img class="img-fluid rounded-3circle mb-3" src="{% static 'img/televisao.png' %}" alt="" style="width: 115px">-->
+<!--            <h5>{{temps}} TEMPORADAS</h5>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+        <br>
+        <br>
+
+        <div style="align-items: " ALIGN="center">
+          <img class="img-fluid rounded-circle mb-3" src="{% static 'img/gravacao.png' %}" style="width: 115px; "></a>
+          <h4>{{eps}} EPISÓDIOS</h4>
+          <img class="img-fluid rounded-3circle mb-3" src="{% static 'img/televisao.png' %}" alt="" style="width: 115px">
+            <h4>{{temps}} TEMPORADAS</h4>
+          <br>
+
+        </div>
+
+        <div style="align-items: " ALIGN="center">
+          <a href="#areadebusca"><img src="{% static 'img/back.png' %}" style="width: 30px; "></a>
+          <br>
+          <p style="color: gray; size: 10px;">Nova consulta</p>
+        </div>
+<!--  </section>-->
+
+  <!-- Footer -->
+  <footer class="footer" style="background-color: #141414;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#" style="color: grey;">Sobre</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="color: grey;">Contato</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="color: grey;">Termos de uso</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="color: grey;">Política de privacidade</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0" style=" color: grey">&copy;Busca Série 2019. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#" style="color: grey;">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#" style="color: grey;">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" style="color: grey;">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+
+<!--  <script>-->
+<!--    function Mudarestado(el) {-->
+<!--        var display = document.getElementById(el).style.display;-->
+<!--        if(display == "none")-->
+<!--            document.getElementById(el).style.display = 'block';-->
+<!--        else-->
+<!--            document.getElementById(el).style.display = 'none';-->
+<!--    }-->
+<!--  </script>-->
+</body>
+
+</html>
